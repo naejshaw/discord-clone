@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Press+Start+2P&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: 
+    "header"
+    "section-1"
+    "section-2"
+    "section-3"
+    "section-4"
+    "footer"
+    ;
+}
+
+header, #section-1, #section-2, #section-3, #section-4{
+    padding: 40px 24px;
+    left: 1;
+}
+
+picture{
+    max-width: 100%;
+    display: block;
+}
+
+h1{
+    font-family: 'Luckiest Guy';
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #23272A;
+}
+
+h2{
+    font-family: Open Sans;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #23272A;
+}
+
+p{
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #23272A;
+}
+
+button{
+    border: none;
+    border-radius: 28px;
+    margin-top: 5px;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+/* Header */
+
+header{
+    background-image: url("assets/img/HBg.png");
+    background-size: cover;
+    height: 500px;
+    grid-area: header;
+    top: 69px;
+    gap: 24px;
+    padding: 0px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    ". ."
+    "header-title ."
+    "header-text header-text"
+    "header-w-btn header-w-btn"
+    "header-b-btn header-b-btn"
+    ". ."
+    ;
+    gap: 10px;
+}
+
+header h1{
+    grid-area: header-title;
+    color: white;
+}
+
+header p{
+    grid-area: header-text;
+    color: white;
+}
+
+.white{
+    grid-area: header-w-btn;
+    background-color: white;
+    color: #23272A;
+}
+
+.black{
+    grid-area: header-b-btn;
+    background: #23272A;
+    color: white;
+}
+
+
+/* Sections */
+
+#section-1{
+    grid-area: section-1;
+}
+
+#section-2{
+    grid-area: section-2;
+}
+
+#section-3{
+    grid-area: section-3;
+}
+
+#section-4{
+    grid-area: section-4;
+}
+
+#section-4 h1{
+    color: #23272A;
+}
+
+#section-2, #section-4{
+    background-color: #f6f6f6;
+}
+
+/* Footer */
+
+footer{
+    grid-area: footer;
+    background-color: #23272A;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Media Query */
+@media  screen and (min-width: 429px) {
+    header{
+        background-image: url('assets/img/desk-HBg.png');
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: repeat(3, 1fr);  
+        grid-template-areas: "header-title header-title" "header-text header-text" "wbtn bbtn"; 
+    }
+
+    header h1, header p{
+        text-align: center;
+    }
+
+    header h1{
+        grid-area: header-title;
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+        letter-spacing: 0em;
+        width: 20vw;
+        justify-self: center;
+    }
+
+    header p{
+        grid-area: header-text;
+        width: 55vw;
+        justify-self: center;
+    }
+
+    .white{
+        grid-area: wbtn;
+        justify-self: end;
+        align-self: flex-start;
+    }
+
+    .black{
+        grid-area: bbtn;
+        justify-self: start;
+        align-self: flex-start;
+    }
+
+    button{
+        padding: 1rem 2rem; 
+    }
+
+    #section-2{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "sec-title sec-img" "sec-text sec-img" "sec-text sec-img";
+    }
+
+    #section-1, #section-3{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: "sec-img sec-title" "sec-img sec-text" "sec-img sec-text";
+    }
+
+    #section-1 picture, #section-3 picture{
+        justify-self: end;
+    }
+
+    #section-1 h2, #section-1 p, #section-3 h2, #section-3 p{
+        justify-self: start;
+    }
+
+    #section-2 picture{
+        justify-self: start;
+    }
+
+    #section-2 h2, #section-2 p{
+        align-self: flex-start;
+        justify-self: flex-end;
+    }
+
+    section{
+        justify-items: center;
+        align-items: center;
+        height: 448px;
+    }
+
+    section picture{
+        grid-area: sec-img;
+    }
+
+    section picture img{
+        max-width: 100%;
+    }
+
+    section h2{
+        grid-area: sec-title;
+        width: 329px;
+        font-size: 2.5rem;
+        font-weight: 800;
+        align-self: flex-start;
+    }
+    
+    section p{
+        grid-area: sec-text;
+        font-size: 1rem;
+        width: 348px;
+        align-self: flex-start;
+    }
+
+    #section-4 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: "sec-title" "sec-text" "sec-img";
+        justify-content: center;
+    }
+    
+    #section-4 h1 {
+        grid-area: sec-title;
+        width: 608px;
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+    
+    #section-4 p {
+        grid-area: sec-text;
+        font-size: 1rem;
+        width: 802px;
+    }
+    
+    #section-4 picture {
+        grid-area: sec-img;
+    }
+    
+    #section-4 h1,
+    #section-4 p {
+        text-align: center;
+    }
+    
+    footer {
+        grid-area: footer;
+        background-color: #23272A;
+        padding: 20px 40px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin-top: 240px; 
+    }
+}
